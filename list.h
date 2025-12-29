@@ -1,5 +1,5 @@
 #ifndef LIST_H_
-#define LIST_H_ 1
+#define LIST_H_
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus

@@ -3,7 +3,7 @@
 #include <string.h>
 #include <assert.h>
 
-#include "./list.h"
+#include "list.h"
 
 struct ListNode {
     struct ListNode *prev;
