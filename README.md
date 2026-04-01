@@ -4,13 +4,13 @@
 
 ## PRESENTATION
 
-Generic doubly linked list implementation in ANSI C.
+Generic doubly linked list implementation in ISO C.
 
 ---
 
 ##  PREREQUISITES
 
-- C99 (or higer) compiler.
+- C99 compiler.
 
 ---
 

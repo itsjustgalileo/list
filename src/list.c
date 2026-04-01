@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include <assert.h>
 
 #include "list.h"
 
@@ -57,7 +56,10 @@ static struct ListNode *list_node_new(void *data)
 
 bool list_push_back(List *list, void *data)
 {
-    assert(list != NULL);
+    if (NULL == list) {
+        return false;
+    }
+    
     struct ListNode *node = list_node_new(data);
     if (NULL == node) {
         return false;
@@ -78,7 +80,9 @@ bool list_push_back(List *list, void *data)
 
 bool list_push_front(List *list, void *data)
 {
-    assert(list != NULL);
+    if (NULL == list) {
+        return false;
+    }
 
     struct ListNode *node = list_node_new(data);
     if (NULL == node) {
@@ -100,7 +104,9 @@ bool list_push_front(List *list, void *data)
 
 bool list_pop_back(List *list, void **out)
 {
-    assert(list != NULL);
+    if (NULL == list) {
+        return false;
+    }
 
     if (list->count == 0) {
         return false;
@@ -127,7 +133,9 @@ bool list_pop_back(List *list, void **out)
 
 bool list_pop_front(List *list, void **out)
 {
-    assert(list != NULL);
+    if (NULL == list) {
+        return false;
+    }
 
     if (list->count == 0) {
         return false;
@@ -154,7 +162,9 @@ bool list_pop_front(List *list, void **out)
 
 bool list_remove(List *list, void *elem)
 {
-    assert(list != NULL);
+    if (NULL == list) {
+        return false;
+    }
 
     struct ListNode *node = list->head;
 
@@ -186,7 +196,9 @@ bool list_remove(List *list, void *elem)
 
 void list_clear(List *list)
 {
-    assert(list != NULL);
+    if (NULL == list) {
+        return;
+    }
 
     struct ListNode *node = list->head;
 
@@ -221,12 +233,16 @@ void *list_tail(const List *list)
 
 size_t list_size(const List *list)
 {
-    assert(list != NULL);
+    if (NULL == list) {
+        return 0;
+    }
     return list->count;
 }
 
 bool list_empty(const List *list)
 {
-    assert(list != NULL);
+    if (NULL == list) {
+        return false;
+    }
     return (list->count == 0);
 }
